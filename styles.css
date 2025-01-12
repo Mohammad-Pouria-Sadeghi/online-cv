@@ -1,0 +1,232 @@
+:root {
+  --clr-bg: hsl(0, 0%, 5%);
+  --clr-neutral-100: hsl(0, 0%, 95%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--clr-bg);
+  color: var(--clr-neutral-100);
+  font-family: "Roboto", serif;
+}
+
+.header {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(3vw, 150px, 12vw);
+  position: relative;
+  animation: titleAnimate 2s ease-in-out 1;
+}
+
+@keyframes titleAnimate {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+.title--p {
+  transform: translateY(7vw);
+  transition: 0.7s ease-in-out;
+}
+
+.wrapper:hover .title {
+  transform: translateY(0);
+}
+
+.title--p::before {
+  content: "If you seek Innovation";
+  font-family: "orbitron";
+  font-size: 3vw;
+  text-wrap: nowrap;
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  opacity: 0;
+  transition: 0.7s ease-in-out;
+}
+
+.wrapper:hover .title--p::before {
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+}
+
+.title--p::after {
+  content: "If you demand Excellence";
+  font-family: "orbitron";
+  opacity: 0;
+  font-size: 3vw;
+  text-wrap: nowrap;
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  transition: 0.7s ease-in-out;
+}
+
+.wrapper:hover .title--p::after {
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+}
+
+.title--s::after {
+  content: "I am your perfect fit";
+  font-size: 3vw;
+  font-family: "orbitron";
+  text-wrap: nowrap;
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  opacity: 1;
+  transform: translateX(-50%) scale(0);
+  transition: 0.7s ease-in-out;
+}
+
+.wrapper:hover .title--s::after {
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+}
+
+.tt {
+  text-align: center;
+  font-size: 5vw;
+}
+
+.h {
+  opacity: 0;
+}
+
+.autoShow {
+  animation: dada both;
+  animation-timeline: view(70% 30%);
+}
+
+@keyframes dada {
+  from {
+    opacity: 0;
+    transform: translateY(200px) scale(0.3);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+main {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.skill-container {
+  width: 75%;
+  max-width: 500px;
+  background-color: red;
+  padding: 5px;
+}
+
+.autoBlur {
+  animation: autoBlurAnimation linear both;
+  animation-timeline: view();
+  text-align: center;
+  font-size: clamp(3vw, 150px, 8vw);
+  text-transform: uppercase;
+  margin-bottom: 7vw;
+}
+
+@keyframes autoBlurAnimation {
+  0% {
+    filter: blur(35px);
+  }
+
+  45%,
+  55% {
+    filter: blur(0);
+  }
+
+  100% {
+    filter: blur(35px);
+  }
+}
+
+@media screen and (min-width: 928px) {
+  .w-50 {
+    width: 75%;
+    margin: auto;
+  }
+
+  .summary {
+    font-size: 2vw;
+  }
+}
+
+.autoBlurc {
+  margin-top: 150px;
+}
+
+.c {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  /* background-color: #fff; */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h2 {
+  color: var(--clr-neutral-100);
+  text-align: center;
+  font-size: 5vw;
+}
+
+.skill-bar {
+  margin: 20px 0;
+  background-color: var(--clr-bg);
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-bar-fill {
+  display: block;
+  height: 20px;
+  line-height:20px;
+  color: black;
+  padding-left: 10px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  background-color: var(--clr-neutral-100);
+  border-radius: 25px;
+  transition: width 1.5s ease-out;
+}
+
+.skill-bar {
+  border: 1px solid #303030;
+  width: 100%;
+  height: 20px;
+}
